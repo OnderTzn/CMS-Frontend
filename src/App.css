@@ -33,9 +33,14 @@ a {
 }
 
 .gradient__text {
+    color: white;
     background: var(--gradient-text);
     background-clip: text;
     -webkit-background-clop: text;
+    text-align: center;
+    /*background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clop: text;*/
 }
 
 .section__padding {
