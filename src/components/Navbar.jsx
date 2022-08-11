@@ -21,22 +21,43 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
       <span
         style={{ background: dotColor }}
         className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-      >
-        {icon}
-      </span>
+      />
+      {icon}
     </button>
   </TooltipComponent>
 );
 
 const Navbar = () => {
-  const { currentColor, activeMenu, setActiveMenu, isClicked, setIsClicked, setScreenSize, screenSize, handleClick } = useStateContext();
+  const { currentColor, activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, setScreenSize, screenSize } = useStateContext();
 
+  /*
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);
+
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
+  */
+  
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
-      <NavButton
+      <NavButton /*Button for opening and closing the navigation bar */
         title="Menu"
         customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
-        color="blue"
+        color="#E50914"
         icon={<AiOutlineMenu />}
       />
       <div className="flex">
@@ -65,8 +86,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg" onClick={() => handleClick("userProfile")}>
             <img
               className="rounded-full w-8 h-8"
-              src={avatar}
-            />
+              src={avatar}/>
             <p>
               <span className="text-gray-400 text-14">Hi, </span> {''}
               <span className="text-gray-400 font-bold ml-1 text-14">Michael</span>

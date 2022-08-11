@@ -1,11 +1,13 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Route } from 'react-router-dom';
 import { FaReact } from 'react-icons/fa';
 import { MdOutlineCancel, MdOutLineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { links } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
+import onderflix from "../data/onderflix.png";
+import App from '../App';
 
 const Sidebar = () => {
   const {activeMenu, setActiveMenu } = useStateContext();
@@ -17,8 +19,11 @@ const Sidebar = () => {
     <div className='ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10'>
       {activeMenu && (<>
       <div className='flex justify-between items-center'>
-        <Link to="/" onClick={() => setActiveMenu(false)} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
-          <FaReact /> <span>React</span> {/*LOGO IS HERE FOR Onderflix */}
+        <Link to="/" onClick={<Route path="/" />} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+            {/*LOGO IS HERE FOR Onderflix */}   
+            <img  
+              className="mt-2 w-48 h-10"
+              src={onderflix}/>          
         </Link>
           <TooltipComponent content="Menu" position='BottomCenter'>
             <button type='button' onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
