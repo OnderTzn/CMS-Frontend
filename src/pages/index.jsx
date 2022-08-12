@@ -1,3 +1,4 @@
+export { default as Home } from './Home';
 export { default as ShowContents } from './content/ShowContents';
 export { default as FindContentById } from './content/FindContentById';
 export { default as FindContentByName } from './content/FindContentByName';
@@ -6,7 +7,7 @@ export { default as UpdateContent } from './content/UpdateContent';
 export { default as AddLicenseToContent } from './content/AddLicenseToContent';
 export { default as DeleteContent } from './content/DeleteContent';
 export { default as DeleteLicenseFromContent } from './content/DeleteLicenseFromContent';
-export { default as ShowLicense } from './license/ShowLicense';
+export { default as ShowLicenses } from './license/ShowLicenses';
 export { default as FindLicenseById } from './license/FindLicenseById';
 export { default as AddLicense } from './license/AddLicense';
 export { default as UpdateLicense } from './license/UpdateLicense';
