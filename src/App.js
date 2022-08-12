@@ -4,7 +4,8 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { ShowContents, FindContentById, FindContentByName } from './pages';
+import { ShowContents, FindContentById, FindContentByName,  AddContent, UpdateContent, AddLicenseToContent, DeleteContent, DeleteLicenseFromContent} from './pages';
+import { ShowLicenses, FindLicenseById, AddLicense, UpdateLicense, DeleteLicense } from './pages';
 
 import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
@@ -43,11 +44,15 @@ const App = () => {
               <Routes>
                 {/*Content */}              
                 <Route path="/Show%20contents" element={(<ShowContents />)} />
+                <Route path="/Show%20contents" element={(<ShowContents />)} />
+                <Route path="/Show%20contents" element={(<ShowContents />)} />
+                <Route path="/Show%20contents" element={(<ShowContents />)} />
+                <Route path="/Show%20contents" element={(<ShowContents />)} />
 
                 {/*Pages */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                <Route path="/Show%20licenses" element={<ShowLicenses />} />
+                <Route path="/employees" element={<FindLicenseById />} />
+                <Route path="/customers" element={<AddLicense />} />
 
                 
               </Routes>
