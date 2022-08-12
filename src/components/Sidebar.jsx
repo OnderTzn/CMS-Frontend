@@ -22,7 +22,7 @@ const Sidebar = () => {
         <Link to="/" onClick={<Route path="/" />} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
             {/*LOGO IS HERE FOR Onderflix */}   
             <img  
-              className="mt-2 w-48 h-10"
+              className="mt-3 w-48 h-10"
               src={onderflix}/>          
         </Link>
           <TooltipComponent content="Menu" position='BottomCenter'>
