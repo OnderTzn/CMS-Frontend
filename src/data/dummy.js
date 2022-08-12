@@ -29,7 +29,7 @@ export const links = [
     title: 'Content',
     links: [
       {
-        name: 'Show contents',
+        name: 'All contents',
         icon: <MdOutlineSlideshow />,
       },
       {
@@ -90,15 +90,110 @@ export const links = [
   },
 ];
 
-export const gridOrderImage = (props) => (
-  <div>
-    <img
-      className="rounded-xl h-20 md:ml-3"
-      src={props.ProductImage}
-      alt="order-item"
-    />
-  </div>
-);
+export const contentData = [
+  {
+    Id: 1,
+    Name: 'The Batman',
+    Status: 'InProgress',
+    Licenses: '2',
+    PosterUrl: 'https://m.media-amazon.com/images/M/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDYtZTk3MTQ3NGQxZGEwXkEyXkFqcGdeQXVyMzMwOTU5MDk@._V1_.jpg',
+    VideoUrl: 'https://youtu.be/mqqft2x_Aa4',
+    ContentCode: '6e4fa902-ebc3-49a3-9f40-7f01825e8002',
+    StatusBg: '#E50914',
+  },
+  {
+    Id: 2,
+    Name: 'Minions 2 The Rise of Gru',
+    Status: 'Published',
+    Licenses: '5',
+    PosterUrl: 'https://m.media-amazon.com/images/M/MV5BZDQyODUwM2MtNzA0YS00ZjdmLTgzMjItZWRjN2YyYWE5ZTNjXkEyXkFqcGdeQXVyMTI2MzY1MjM1._V1_FMjpg_UX1000_.jpg',
+    VideoUrl: 'https://youtu.be/6DxjJzmYsXo',
+    ContentCode: '3de7be07-4ecf-4de7-926f-af245f9bea0c',
+    StatusBg: '#45C437',
+  },
+  {
+    Id: 3,
+    Name: 'Thor: Love and Thunder',
+    Status: 'Published',
+    Licenses: '4',
+    PosterUrl: 'https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg',
+    VideoUrl: 'https://www.youtube.com/watch?v=Go8nTmfrQd8',
+    ContentCode: '328c5cd4-9661-4710-a169-31a220e2c9f6',
+    StatusBg: '#45C437',
+  },
+  {
+    Id: 4,
+    Name: 'Doctor Strange in the Multiverse of Madness',
+    Status: 'Published',
+    Licenses: '8, 20, 3',
+    PosterUrl: 'https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg',
+    VideoUrl: 'https://youtu.be/aWzlQ2N6qqg',
+    ContentCode: '20d3afe5-114d-4a18-9d67-1c53575aedbf',
+    StatusBg: '#45C437',
+  },
+  {
+    Id: 5,
+    Name: 'Fight Club',
+    Status: 'InProgress',
+    Licenses: '-',
+    PosterUrl: 'https://m.media-amazon.com/images/M/MV5BNDIzNDU0YzEtYzE5Ni00ZjlkLTk5ZjgtNjM3NWE4YzA3Nzk3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg',
+    VideoUrl: 'https://youtu.be/BdJKm16Co6M',
+    ContentCode: 'a9fd4f36-0132-4e9c-9178-a171767cc306',
+    StatusBg: '#E50914',
+  },
+]
+
+export const licenseData = [
+  {
+    Id: 1,
+    Name: 'License 1',
+    StartTime: 1645488000000,
+    EndTime: 1671753600000,
+    LicenseCode: '2cf6ad8c-96f7-4982-891c-f1d9f9056a50',
+  },
+  {
+    Id: 1,
+		Name: "License 2 5/12/2025-6/12/2030",
+		StartTime: "1764892800000",
+    EndTime: "1906934400000",
+    LicenseCode: '2cf6ad8c-96f7-4982-891c-f1d9f9056a50',
+	},
+  {
+    Id: 2,
+		Name: "License 3 5/12/1990-5/12/2000",
+		StartTime: "660355200000",
+    EndTime: "975974400000",
+    LicenseCode: '2cf6ad8c-96f7-4982-891c-f1d9f9056a50',
+	},
+  {
+    Id: 3,
+		Name: "License 4 conflict w/1 1/1/2022-1/1/2023",
+		StartTime: "1640995200000",
+    EndTime: "1672531200000",
+    LicenseCode: '2cf6ad8c-96f7-4982-891c-f1d9f9056a50',
+	},
+  {
+    Id: 4,
+		Name: "License 5 2/8/2022 16:13:00- 2/8/2022 16:14:00",
+		StartTime: "1659456780000",
+    EndTime: "1659456840000",
+    LicenseCode: '2cf6ad8c-96f7-4982-891c-f1d9f9056a50',
+	},
+  {
+    Id: 5,
+		Name: "License 6 3/8/2022 00:00:00- 9/8/2022 23:59:59",
+		StartTime: "1659484800000",
+    EndTime: "1660089599000",
+    LicenseCode: '2cf6ad8c-96f7-4982-891c-f1d9f9056a50',
+	},
+  {
+    Id: 6,
+		Name: "License Current time 3/8/2022 18:45:00- 3/8/2022 18:46:00",
+		StartTime: "1659541620000",
+    EndTime: "1659541680000",
+    LicenseCode: '2cf6ad8c-96f7-4982-891c-f1d9f9056a50',
+	},
+]
 
 export const gridOrderStatus = (props) => (
   <button
@@ -109,6 +204,66 @@ export const gridOrderStatus = (props) => (
     {props.Status}
   </button>
 );
+
+export const contentsGrid = [
+  {
+    field: 'Id',
+    headerText: 'Id',
+    textAlign: 'Center',
+    width: '80',
+  },
+  {
+    field: 'Name',
+    headerText: 'Names', 
+    width: '200',
+    editType: 'dropdownedit',
+    textAlign: 'Center',
+  },
+  {
+    field: 'Status',
+    headerText: 'Status',
+    template: gridOrderStatus,  
+    width: '120',
+    editType: 'dropdownedit',
+    textAlign: 'Center',
+  },
+  { field: 'Licenses',
+    headerText: 'Licenses',
+    width: '150',
+    textAlign: 'Center',
+  },
+  {
+    field: 'PosterUrl',
+    headerText: 'Poster Url',
+    textAlign: 'Center',
+    editType: 'numericedit',
+    width: '150',
+  },
+  {
+    field: 'VideoUrl',
+    headerText: 'Video Url',
+    textAlign: 'Center',
+    width: '120',
+  },
+  {
+    field: 'ContentCode',
+    headerText: 'Content Code',
+    width: '120',
+    textAlign: 'Center',
+  },
+];
+
+export const gridOrderImage = (props) => (
+  <div>
+    <img
+      className="rounded-xl h-20 md:ml-3"
+      src={props.ProductImage}
+      alt="order-item"
+    />
+  </div>
+);
+
+
 
 export const kanbanGrid = [
   { headerText: 'To Do',
@@ -852,33 +1007,34 @@ export const userProfileData = [
 
 export const ordersGrid = [
   {
-    headerText: 'Image',
+    field: 'Id',
+    headerText: 'Id',
     template: gridOrderImage,
     textAlign: 'Center',
     width: '120',
   },
   {
     field: 'OrderItems',
-    headerText: 'Item',
+    headerText: 'Content Name',
     width: '150',
     editType: 'dropdownedit',
     textAlign: 'Center',
   },
   { field: 'CustomerName',
-    headerText: 'Customer Name',
+    headerText: 'Status',
     width: '150',
     textAlign: 'Center',
   },
   {
     field: 'TotalAmount',
-    headerText: 'Total Amount',
+    headerText: 'Poster Url',
     format: 'C2',
     textAlign: 'Center',
     editType: 'numericedit',
     width: '150',
   },
   {
-    headerText: 'Status',
+    headerText: 'Video Url',
     template: gridOrderStatus,
     field: 'OrderItems',
     textAlign: 'Center',
@@ -886,15 +1042,8 @@ export const ordersGrid = [
   },
   {
     field: 'OrderID',
-    headerText: 'Order ID',
+    headerText: 'Content Code',
     width: '120',
-    textAlign: 'Center',
-  },
-
-  {
-    field: 'Location',
-    headerText: 'Location',
-    width: '150',
     textAlign: 'Center',
   },
 ];
