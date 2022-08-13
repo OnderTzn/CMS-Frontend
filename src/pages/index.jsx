@@ -1,7 +1,6 @@
 export { default as Home } from './Home';
 export { default as AllContents } from './content/AllContents';
-export { default as FindContentById } from './content/FindContentById';
-export { default as FindContentByName } from './content/FindContentByName';
+export { default as FindContent } from './content/FindContent';
 export { default as AddContent } from './content/AddContent';
 export { default as UpdateContent } from './content/UpdateContent';
 export { default as AddLicenseToContent } from './content/AddLicenseToContent';

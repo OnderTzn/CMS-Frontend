@@ -33,11 +33,7 @@ export const links = [
         icon: <MdOutlineSlideshow />,
       },
       {
-        name: 'Find content by id',
-        icon: <MdOutlineFindInPage />,
-      },
-      {
-        name: 'Find content by name',
+        name: 'Find content',
         icon: <MdOutlineFindInPage />,
       },
       {
