@@ -7,6 +7,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { links } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import onderflix from "../data/onderflix.png";
+import cmslogo from "../data/CMS.png";
 import App from '../App';
 
 const Sidebar = () => {
@@ -23,7 +24,7 @@ const Sidebar = () => {
             {/*LOGO IS HERE FOR Onderflix */}   
             <img  
               className="mt-3 w-48 h-10"
-              src={onderflix}/>          
+              src={cmslogo}/>          
         </Link>
           <TooltipComponent content="Menu" position='BottomCenter'>
             <button type='button' onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}

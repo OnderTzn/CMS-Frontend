@@ -5,7 +5,7 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import { Home, AllContents, FindContent, AddContent, UpdateContent, AddLicenseToContent, DeleteContent, DeleteLicenseFromContent} from './pages';
-import { ShowLicenses, FindLicenseById, AddLicense, UpdateLicense, DeleteLicense } from './pages';
+import { ShowLicenses, FindLicenseById, AddLicense, UpdateLicense, DeleteLicense, Calendar } from './pages';
 
 import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
@@ -57,7 +57,8 @@ const App = () => {
                 <Route path="/Find%20license%20by%20id" element={<FindLicenseById />} />
                 <Route path="/Add%20license" element={<AddLicense />} />
                 <Route path="/Update%20license" element={<UpdateLicense />} />
-                <Route path="/Delete%20license" element={<DeleteLicense />} />                
+                <Route path="/Delete%20license" element={<DeleteLicense />} />
+                <Route path="/Calendar" element={<Calendar />} />
               </Routes>
             </div>
           </div>

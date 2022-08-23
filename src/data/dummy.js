@@ -24,7 +24,7 @@ import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 import product8 from './product8.jpg';
 
-export const links = [
+export const links = [ /*Buttons for sidebar */
   {
     title: 'Content',
     links: [
@@ -81,6 +81,16 @@ export const links = [
       {
         name: 'Delete license',
         icon: <MdDeleteOutline />,
+      },
+    ],
+  },
+
+  {
+    title: 'Calendar',
+    links: [
+      {
+        name: 'Calendar',
+        icon: <AiOutlineCalendar />,
       },
     ],
   },

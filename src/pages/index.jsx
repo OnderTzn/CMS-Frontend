@@ -11,3 +11,4 @@ export { default as FindLicenseById } from './license/FindLicenseById';
 export { default as AddLicense } from './license/AddLicense';
 export { default as UpdateLicense } from './license/UpdateLicense';
 export { default as DeleteLicense } from './license/DeleteLicense';
+export { default as Calendar } from './Calendar';
