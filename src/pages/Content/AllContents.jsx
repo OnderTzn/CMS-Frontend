@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject, Search, Toolbar } from '@syncfusion/ej2-react-grids'
 
-import { contentData, contentsGrid, licenseData, ordersData, ContextMenuItems, ordersGrid } from "../../data/dummy";
+import { contentsGrid } from "../../data/dummy";
+import apiClient from '../../api/client';
 import { Header } from '../../components';
 
 
 const AllContents = () => {
+  const [contents, setContents] = useState([]);
+
+  useEffect(() => {
+    apiClient.get('/contents')
+      .then((res) => setContents(res.data))
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error('Failed to fetch contents', err);
+      });
+  }, []);
+
   return (
     <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category="Contents" title="All contents" />
       <GridComponent
         id="gridcomp"
-        dataSource={contentData}
+        dataSource={contents}
         allowPaging
         allowSorting
         toolbar={['Search']}
@@ -27,4 +39,4 @@ const AllContents = () => {
   )
 }
 
-export default AllContents
+export default AllContents;
