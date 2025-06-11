@@ -1,14 +1,11 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
-import { FaReact } from 'react-icons/fa';
-import { MdOutlineCancel, MdOutLineCancel } from 'react-icons/md';
+import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { links } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
-import onderflix from "../data/onderflix.png";
 import cmslogo from "../data/CMS.png";
-import App from '../App';
 
 const Sidebar = () => {
   const {activeMenu, setActiveMenu } = useStateContext();
