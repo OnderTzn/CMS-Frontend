@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { links } from '../data/dummy';
+import apiClient from '../api/client';
 import { useStateContext } from '../contexts/ContextProvider';
 import cmslogo from "../data/CMS.png";
 
 const Sidebar = () => {
   const {activeMenu, setActiveMenu } = useStateContext();
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    apiClient.get('/links')
+      .then((res) => setLinks(res.data))
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error('Failed to fetch sidebar links', err);
+      });
+  }, []);
 
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-gray-500 text-md m-2';
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
@@ -60,4 +70,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default Sidebar;
