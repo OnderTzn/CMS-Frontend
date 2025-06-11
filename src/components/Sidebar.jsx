@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink, Route } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaReact } from 'react-icons/fa';
 import { MdOutlineCancel, MdOutLineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -20,7 +20,11 @@ const Sidebar = () => {
     <div className='ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10'>
       {activeMenu && (<>
       <div className='flex justify-between items-center'>
-        <Link to="/" onClick={<Route path="/" />} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+        <Link
+          to="/"
+          onClick={() => setActiveMenu(false)}
+          className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
+        >
             {/*LOGO IS HERE FOR Onderflix */}   
             <img  
               className="mt-3 w-48 h-10"
@@ -43,8 +47,8 @@ const Sidebar = () => {
                 <NavLink
                   to={`/${link.name}`}
                   key={link.name}
-                  onClick={() => { }}
-                  className={({ isActive }) => isActive ? activeLink : normalLink}>
+                  onClick={() => setActiveMenu(false)}
+                  className={({ isActive }) => (isActive ? activeLink : normalLink)}>
                   {link.icon}
                   <span className='capitalize'>
                     {link.name}
