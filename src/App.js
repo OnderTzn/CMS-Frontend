@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { PrivateRoute } from './components';
+import Login from './pages/Login';
+import { useAuth } from './contexts/AuthContext';
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
@@ -20,6 +23,7 @@ const App = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
@@ -61,23 +65,24 @@ const App = () => {
               <div>
               {themeSettings && (<ThemeSettings />)}
               <Routes>
-              <Route path="/" element={(<Home />)} />
-                {/*Content */}              
-                <Route path="/All%20contents" element={(<AllContents />)} />
-                <Route path="/Find%20content" element={(<FindContent />)} />
-                <Route path="/Add%20content" element={(<AddContent />)} />
-                <Route path="/Update%20content" element={(<UpdateContent />)} />
-                <Route path="/Add%20license%20to%20content" element={(<AddLicenseToContent />)} />
-                <Route path="/Delete%20content" element={(<DeleteContent />)} />
-                <Route path="/Delete%20license%20from%20content" element={(<DeleteLicenseFromContent />)} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+                {/*Content */}
+                <Route path="/All%20contents" element={<PrivateRoute><AllContents /></PrivateRoute>} />
+                <Route path="/Find%20content" element={<PrivateRoute><FindContent /></PrivateRoute>} />
+                <Route path="/Add%20content" element={<PrivateRoute><AddContent /></PrivateRoute>} />
+                <Route path="/Update%20content" element={<PrivateRoute><UpdateContent /></PrivateRoute>} />
+                <Route path="/Add%20license%20to%20content" element={<PrivateRoute><AddLicenseToContent /></PrivateRoute>} />
+                <Route path="/Delete%20content" element={<PrivateRoute><DeleteContent /></PrivateRoute>} />
+                <Route path="/Delete%20license%20from%20content" element={<PrivateRoute><DeleteLicenseFromContent /></PrivateRoute>} />
 
                 {/*License */}
-                <Route path="/Show%20licenses" element={<ShowLicenses />} />
-                <Route path="/Find%20license%20by%20id" element={<FindLicenseById />} />
-                <Route path="/Add%20license" element={<AddLicense />} />
-                <Route path="/Update%20license" element={<UpdateLicense />} />
-                <Route path="/Delete%20license" element={<DeleteLicense />} />
-                <Route path="/Calendar" element={<Calendar />} />
+                <Route path="/Show%20licenses" element={<PrivateRoute><ShowLicenses /></PrivateRoute>} />
+                <Route path="/Find%20license%20by%20id" element={<PrivateRoute><FindLicenseById /></PrivateRoute>} />
+                <Route path="/Add%20license" element={<PrivateRoute><AddLicense /></PrivateRoute>} />
+                <Route path="/Update%20license" element={<PrivateRoute><UpdateLicense /></PrivateRoute>} />
+                <Route path="/Delete%20license" element={<PrivateRoute><DeleteLicense /></PrivateRoute>} />
+                <Route path="/Calendar" element={<PrivateRoute><Calendar /></PrivateRoute>} />
               </Routes>
             </div>
           </div>
