@@ -6,16 +6,18 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Cart;
 
-
-/*function showAllContents() {
-      axios.get('localhost:8080/content/all', 
-        {id: Id, 
-          names: Names,
-          status: Status,
-          licenses: Licenses,
-          posterUrl: PosterUrl,
-          videoUrl: VideoUrl,
-         contentCode: ContentCode});
-    } */
+// Example API call
+/*
+function showAllContents() {
+  axios
+    .get('http://localhost:8080/content/all')
+    .then((res) => {
+      // handle data
+    })
+    .catch((err) => {
+      // handle error
+    });
+}
+*/
