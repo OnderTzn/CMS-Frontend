@@ -194,12 +194,20 @@ export const licenseData = [
 	},
   {
     Id: 6,
-		Name: "License Current time 3/8/2022 18:45:00- 3/8/2022 18:46:00",
-		StartTime: "1659541620000",
+                Name: "License Current time 3/8/2022 18:45:00- 3/8/2022 18:46:00",
+                StartTime: "1659541620000",
     EndTime: "1659541680000",
     LicenseCode: '2cf6ad8c-96f7-4982-891c-f1d9f9056a50',
-	},
+        },
 ]
+
+export const licenseGrid = [
+  { field: 'Id', headerText: 'Id', width: '80', textAlign: 'Center' },
+  { field: 'Name', headerText: 'Name', width: '200', textAlign: 'Center' },
+  { field: 'StartTime', headerText: 'Start Time', width: '160', textAlign: 'Center' },
+  { field: 'EndTime', headerText: 'End Time', width: '160', textAlign: 'Center' },
+  { field: 'LicenseCode', headerText: 'License Code', width: '200', textAlign: 'Center' },
+];
 
 export const gridOrderStatus = (props) => (
   <button
