@@ -12,3 +12,4 @@ export { default as AddLicense } from './License/AddLicense';
 export { default as UpdateLicense } from './License/UpdateLicense';
 export { default as DeleteLicense } from './License/DeleteLicense';
 export { default as Calendar } from './Calendar';
+export { default as Login } from './Login';
