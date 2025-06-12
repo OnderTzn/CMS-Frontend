@@ -6,6 +6,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import apiClient from '../api/client';
 import { useStateContext } from '../contexts/ContextProvider';
 import cmslogo from "../data/CMS.png";
+import { links as defaultLinks } from '../data/dummy';
 
 const Sidebar = () => {
   const {activeMenu, setActiveMenu } = useStateContext();
@@ -17,6 +18,11 @@ const Sidebar = () => {
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.error('Failed to fetch sidebar links', err);
+        if (process.env.NODE_ENV !== 'production') {
+          // eslint-disable-next-line no-console
+          console.warn('Falling back to dummy sidebar links');
+        }
+        setLinks(defaultLinks);
       });
   }, []);
 
