@@ -78,5 +78,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ## Running Tests
 
-Run `npm test -- --watchAll=false` to execute the test suite once. Example tests are in `src/pages/*.test.jsx`.
+Run `npm run test:ci` to execute the test suite once. Tests are located under `src/pages/__tests__` and `src/pages/*.test.jsx`.
 
