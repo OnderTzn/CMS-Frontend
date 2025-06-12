@@ -11,16 +11,35 @@ import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 const App = () => {
-  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const {
+    setCurrentColor,
+    setCurrentMode,
+    currentMode,
+    activeMenu,
+    currentColor,
+    themeSettings,
+    setThemeSettings,
+  } = useStateContext();
+
+  useEffect(() => {
+    const currentThemeColor = localStorage.getItem('colorMode');
+    const currentThemeMode = localStorage.getItem('themeMode');
+    if (currentThemeColor) setCurrentColor(currentThemeColor);
+    if (currentThemeMode) setCurrentMode(currentThemeMode);
+  }, []);
 
   return (
-    <div>
+    <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
             <TooltipComponent content="Settings" position="Top">
-              <button type="button" className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-                style={{ background: "#E50914", borderRadius: "50%" }}>
+              <button
+                type="button"
+                onClick={() => setThemeSettings(true)}
+                className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+                style={{ background: currentColor, borderRadius: '50%' }}
+              >
                 <FiSettings />
               </button>
             </TooltipComponent>
